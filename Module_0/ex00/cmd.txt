@@ -1,0 +1,17 @@
+conda list
+pip list
+
+
+conda info numpy
+pip show numpy
+
+
+conda remove numpy
+pip uninstall numpy
+
+
+conda install numpy
+pip install numpy
+
+
+pip freeze > requirements.txt
