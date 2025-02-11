@@ -3,10 +3,10 @@ import sys
 class Recipe:
 
 	def __init__(self,name,cooking_lvl,cooking_time,ingredients,description,recipe_type):
-		if name.isalpha() and len(name) > 0:
+		if len(name) > 0:
 			self.name = name
 		else:
-			print ("Name can be only alpha and can't be empty")
+			print ("Name can't be empty")
 			sys.exit()
 		try :
 			nb = int(cooking_lvl)
@@ -22,9 +22,10 @@ class Recipe:
 			sys.exit()
 		if len(ingredients) > 0:
 			self.ingredients = ingredients
-			sys.exit()
 		else:
 			print ("ingredients can't be empty")
+			sys.exit()
+
 		self.description = description
 
 		if recipe_type == "starter" or recipe_type == "lunch" or recipe_type == "dessert":
@@ -34,4 +35,11 @@ class Recipe:
 			sys.exit()
 
 	def __str__(self):
-		txt = f"{self.name}\nThe cooking lvl is : {self.cooking_lvl}\nTime you need : {self.cooking_time}\nIngrdient: {self.ingredients}\nDescription:{self.description}\ntype:{self.recipe_type}"
+		return (
+        	f"{self.name}\n"
+        	f"The cooking level is: {self.cooking_lvl}\n"
+        	f"Time you need: {self.cooking_time} minutes\n"
+        	f"Ingredients: {', '.join(self.ingredients)}\n"
+        	f"Description: {self.description}\n"
+        	f"Type: {self.recipe_type}\n"
+    	)
