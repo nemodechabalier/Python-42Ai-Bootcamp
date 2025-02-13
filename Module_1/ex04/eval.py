@@ -14,7 +14,7 @@ class Evaluator:
             print("coef and/or list are uncorrect")
             print(-1)
             return
-        nb = sum(len(word) * coefs[i]for i, word in enumerate(words))
+        nb = sum(len(word) * coefs[i] for i, word in enumerate(words))
         print(nb)
 
 words = ["Le", "Lorem", "Ipsum", "est", "simple"]
